@@ -163,6 +163,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Maven多模块版本管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/09/Maven多模块版本管理/">Maven多模块版本管理</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/09/Maven多模块版本管理/" class="archive-article-date">
+  	<time datetime="2017-02-09T00:13:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在部门一些项目实践Maven构建反应堆的时候，发现部分项目因为版本号用变量管理的问题导致构建失败。具体情况为：项目组为了子模块与父项目的版本号保持一致，将所有子模块的版本号定义为变量，变量的值则只在父项目的pom文件中定义，这样导致的问题是指定子模块进行构建时，因此获取不到版本号这个变量的值（因为并不构建父项目），因此导致相关依赖无法获取到而构建失败。
+　</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法　"></a>解决办法　</h2><p>解决办法是将子模块中的版本号均修改为常量，Maven推荐实践版本号也应该使用常量，至于子模块和父项目的版本一致性和管理的问题，可以采用Maven提供的Version插件实现。命令行为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　mvn versions:set -DnewVersion=1.1-SNAPSHOT</div></pre></td></tr></table></figure>
+<p>通过这个命令行，可以统一对父项目和子模块进行版本号更新，并保持一致。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Maven</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/09/Maven多模块版本管理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Ansible对Windows系统的支持" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -512,6 +590,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
               </li>
              
@@ -536,6 +618,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PhantomJs</a>
               </li>
              
@@ -557,10 +643,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DNS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
             
             <div class="clearfix"></div>

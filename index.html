@@ -1022,6 +1022,86 @@
 
 
   
+    <article id="post-mysql容器解决自动化测试数据初始化与销毁" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/mysql容器解决自动化测试数据初始化与销毁/">mysql容器解决自动化测试数据初始化与销毁</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/mysql容器解决自动化测试数据初始化与销毁/" class="archive-article-date">
+  	<time datetime="2019-05-20T00:54:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>在自动化测试过程中可能遇到无法通过被测系统自身提供的功能对自动化测试产生的数据进行销毁的情况，通过直接执行DDL销毁数据在数据关系比较复杂的情况下可能带来未知异常，因此可以考虑使用容器作为数据源，通过容器的起停来达成测试数据自动初始化和销毁的目的。</p>
+<h2 id="镜像制作流程"><a href="#镜像制作流程" class="headerlink" title="镜像制作流程"></a>镜像制作流程</h2><ul>
+<li>启动mysql容器并将数据目录映射至宿主机</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --name mysqldock -e MYSQL_ROOT_PASSWORD=123456 -d -p 3306:3066 -v /data:/var/lib/mysql mysql</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/05/20/mysql容器解决自动化测试数据初始化与销毁/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/mysql容器解决自动化测试数据初始化与销毁/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我所经历的以及我所理解的敏捷-六-Scrum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1153,88 +1233,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/20/我所经历的以及我所理解的敏捷-四-敏捷计划/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我所经历的以及我所理解的敏捷-三-打造敏捷团队" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/17/我所经历的以及我所理解的敏捷-三-打造敏捷团队/">我所经历的以及我所理解的敏捷-三-打造敏捷团队</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/17/我所经历的以及我所理解的敏捷-三-打造敏捷团队/" class="archive-article-date">
-  	<time datetime="2019-03-17T00:28:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是自组织团队？"><a href="#什么是自组织团队？" class="headerlink" title="什么是自组织团队？"></a>什么是自组织团队？</h2><p>敏捷特征适合建立自组织团队，自组织团队的特点包括：</p>
-<ul>
-<li><p>目标明确</p>
-</li>
-<li><p>公共达到目标</p>
-</li>
-<li><p>每个人天赋容易被激发</p>
-        
-          <a class="article-more-a" href="/2019/03/17/我所经历的以及我所理解的敏捷-三-打造敏捷团队/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">敏捷</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/17/我所经历的以及我所理解的敏捷-三-打造敏捷团队/">展开全文 >></a>
         </p>
       
 
@@ -1445,6 +1443,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
               </li>
              
@@ -1469,6 +1471,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PhantomJs</a>
               </li>
              
@@ -1490,10 +1496,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DNS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
             
             <div class="clearfix"></div>

@@ -163,6 +163,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-maven与gradle下cucumber-jvm环境搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/maven与gradle下cucumber-jvm环境搭建/">maven与gradle下cucumber-jvm环境搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/31/maven与gradle下cucumber-jvm环境搭建/" class="archive-article-date">
+  	<time datetime="2018-05-31T00:46:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>cucumber不需多说，BDD工具，目前被我们用于实例化接口文档。由于实施的两个项目分别使用了maven和gradle构建工具，所以需要考虑maven和gradle下的cucumber-jvm框架的搭建。</p>
+<h2 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
+<li><p><code>pom.xml</code>文件中添加依赖：</p>
+        
+          <a class="article-more-a" href="/2018/05/31/maven与gradle下cucumber-jvm环境搭建/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Maven</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Cucumber</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Gradle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/31/maven与gradle下cucumber-jvm环境搭建/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-docker-java-api使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -873,91 +959,6 @@
 
 
   
-    <article id="post-如何制订测试策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/25/如何制订测试策略/">如何制订测试策略</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/25/如何制订测试策略/" class="archive-article-date">
-  	<time datetime="2017-10-25T01:08:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在上一篇&lt;敏捷研发模式下的质量控制&gt;中介绍了质量控制策略,测试活动是整个研发过程中质量控制活动的一部分.广义的测试活动包括研发全生命周期的测试,例如单元测试,集成测试等,而通常我们所说的测试活动仅指由测试人员完成的部分.</p>
-<p>我们可以将产品的质量看成一个完整的积木模型,各个部分的质量合起来就形成产品的整体质量,所以如果我们能保证各个部分的质量,产品的质量自然就得到保证.</p>
-<p>将产品质量进行切分常见的有两种方式:</p>
-<ul>
-<li><p>第一种是按照产品的架构进行切分,例如前后端分离,微服务架构等,都是从产品架构层面,将一个产品拆分成多个相对独立的部分,保证了这几个部分的质量,并辅以简单的连通性测试,产品的质量基本就得到了保证.</p>
-</li>
-<li><p>第二种是按照产品研发过程进行切分,例如将研发过程质量控制划分为编码阶段的质量控制,测试阶段的质量控制,运维阶段的质量控制等,这几个阶段的质量合力确保了整个产品的质量.</p>
-</li>
-</ul>
-<h2 id="测试策略制订的意义"><a href="#测试策略制订的意义" class="headerlink" title="测试策略制订的意义"></a>测试策略制订的意义</h2>
-        
-          <a class="article-more-a" href="/2017/10/25/如何制订测试策略/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">测试策略</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/25/如何制订测试策略/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1139,6 +1140,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
               </li>
              
@@ -1163,6 +1168,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PhantomJs</a>
               </li>
              
@@ -1184,10 +1193,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DNS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
             
             <div class="clearfix"></div>

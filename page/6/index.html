@@ -163,6 +163,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-基于Jenkins构建持续交付管道（三）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/基于Jenkins构建持续交付管道（三）/">基于Jenkins构建持续交付管道（三）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/28/基于Jenkins构建持续交付管道（三）/" class="archive-article-date">
+  	<time datetime="2017-02-28T00:57:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一章中已经介绍了如何基于Jenkins配置一个独立的Job，即完成了交付流程中单个节点的实现，持续交付管道需要将交付流程中的各个节点串起来，再加上适当的反馈。本章将介绍如何将各个独立Job进行串联。</p>
+<h2 id="各个交付节点的实现"><a href="#各个交付节点的实现" class="headerlink" title="各个交付节点的实现"></a>各个交付节点的实现</h2><p>结合上一章的内容，交付流程中的各个节点其实就对应到一个一个的Job。以典型的Java项目为例，如果使用Maven进行构建，可能涉及的节点可能有：编译打包、单元测试、静态扫描、测试部署、功能测试等。分别对应的Maven命令如下：</p>
+<ul>
+<li><p>编译打包(跳过单元测试)：mvn clean install -Dmaven.test.skip=true</p>
+</li>
+<li><p>单元测试：mvn clean test</p>
+</li>
+<li><p>静态扫描：mvn sonar:sonar</p>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/02/28/基于Jenkins构建持续交付管道（三）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Jenkins</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">持续交付</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pipeline</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/28/基于Jenkins构建持续交付管道（三）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-基于Jenkins构建持续交付管道（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -936,84 +1029,6 @@
 
 
   
-    <article id="post-Maven多模块版本管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/Maven多模块版本管理/">Maven多模块版本管理</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/Maven多模块版本管理/" class="archive-article-date">
-  	<time datetime="2017-02-09T00:13:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在部门一些项目实践Maven构建反应堆的时候，发现部分项目因为版本号用变量管理的问题导致构建失败。具体情况为：项目组为了子模块与父项目的版本号保持一致，将所有子模块的版本号定义为变量，变量的值则只在父项目的pom文件中定义，这样导致的问题是指定子模块进行构建时，因此获取不到版本号这个变量的值（因为并不构建父项目），因此导致相关依赖无法获取到而构建失败。
-　</p>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法　"></a>解决办法　</h2><p>解决办法是将子模块中的版本号均修改为常量，Maven推荐实践版本号也应该使用常量，至于子模块和父项目的版本一致性和管理的问题，可以采用Maven提供的Version插件实现。命令行为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　mvn versions:set -DnewVersion=1.1-SNAPSHOT</div></pre></td></tr></table></figure>
-<p>通过这个命令行，可以统一对父项目和子模块进行版本号更新，并保持一致。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Maven</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/Maven多模块版本管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -1195,6 +1210,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
               </li>
              
@@ -1219,6 +1238,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PhantomJs</a>
               </li>
              
@@ -1240,10 +1263,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DNS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
             
             <div class="clearfix"></div>

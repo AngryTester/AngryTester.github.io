@@ -163,6 +163,113 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-通过noVNC远程监控自动化测试执行过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/16/通过noVNC远程监控自动化测试执行过程/">通过noVNC远程监控自动化测试执行过程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/16/通过noVNC远程监控自动化测试执行过程/" class="archive-article-date">
+  	<time datetime="2019-08-16T03:52:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="why"><a href="#why" class="headerlink" title="why"></a>why</h2><p>自动化测试追求的是无人值守，因此执行过程的监控就是鸡肋，但是在遇到以下场景时情况可能就有所不同：</p>
+<ul>
+<li><p>除了实时日志外希望输出更丰富的执行过程内容</p>
+</li>
+<li><p>需要给领导汇报自动化测试工作</p>
+</li>
+</ul>
+<p>其中第二点尤为关键，对于不熟悉自动化测试的领导来说，可视化的执行视图对于领导来说会显得更友好且直观。</p>
+<h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><p>对于Chrome和Firefox这类可运行在Linux环境下的前端自动化测试来说，已有前人种树，直接乘凉即可。可直接使用<a href="https://github.com/elgalu/docker-selenium" target="_blank" rel="external">docker-selenium</a>，因此难点主要在于只能运行于Windows环境下的IE浏览器。</p>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p>整体方案包括<code>Selenium Grid+UltraVNC+noVNC+websockify</code>。操作步骤如下：</p>
+<ul>
+<li><p>Selenium Grid的环境配置无需赘述。</p>
+</li>
+<li><p>安装UltraVNC。</p>
+</li>
+<li><p>安装NodeJS。</p>
+</li>
+<li><p>安装相关依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install ws</div><div class="line">npm install optimist</div><div class="line">npm install @novnc/novnc</div></pre></td></tr></table></figure>
+</li>
+<li><p>下载<a href="http://github.com/kanaka/noVNC/zipball/master" target="_blank" rel="external">noVNC</a>,解压至<code>node_modules</code>文件夹。</p>
+</li>
+<li><p>下载<a href="https://github.com/novnc/websockify-js/archive/master.zip" target="_blank" rel="external">Wesockify</a>,解压至<code>node_modules\noVNC</code>文件夹。</p>
+</li>
+<li><p>配置UltraVNC，去掉密码要求。进入UltraVNC安装目录找到配置文件，在配置文件中增加配置<code>AuthRequired=0</code>，然后将UltraVNC密码设置为空。</p>
+</li>
+<li><p>修改<code>vnc.html</code>，在body最后增加如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">      window.onload=function()&#123;</div><div class="line">          var timer = setTimeout(() =&gt; &#123;</div><div class="line">           clearTimeout(timer)</div><div class="line">           document.getElementById(&quot;noVNC_connect_button&quot;).click();</div><div class="line">          &#125;, 500);</div><div class="line">      &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>运行如下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node C:\Users\Administrator\node_modules\noVNC\websockify-js-master\websockify\websockify.js --web C:\Users\Administrator\node_modules\noVNC 9000 localhost:5900</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>通过<a href="http://服务器IP:9000即可浏览器访问服务器实时页面效果。" target="_blank" rel="external">http://服务器IP:9000即可浏览器访问服务器实时页面效果。</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">自动化测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/16/通过noVNC远程监控自动化测试执行过程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-TCPClient模式输出精准测试覆盖率" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1180,88 +1287,6 @@
 
 
   
-    <article id="post-我所经历的以及我所理解的敏捷-四-敏捷计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/20/我所经历的以及我所理解的敏捷-四-敏捷计划/">我所经历的以及我所理解的敏捷-四-敏捷计划</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/20/我所经历的以及我所理解的敏捷-四-敏捷计划/" class="archive-article-date">
-  	<time datetime="2019-03-20T00:30:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="适应性计划的必要性"><a href="#适应性计划的必要性" class="headerlink" title="适应性计划的必要性"></a>适应性计划的必要性</h2><p>敏捷的计划叫做适应性计划，意旨根据变化能够及时适应。为什么需要做适应性计划？</p>
-<ul>
-<li><p>项目的不确定性</p>
-</li>
-<li><p>敏捷项目是以价值为驱动</p>
-</li>
-<li><p>风险需要降低</p>
-        
-          <a class="article-more-a" href="/2019/03/20/我所经历的以及我所理解的敏捷-四-敏捷计划/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">敏捷</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/20/我所经历的以及我所理解的敏捷-四-敏捷计划/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1387,10 +1412,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
@@ -1427,6 +1448,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SSH Secure File Transfer</a>
               </li>
              
@@ -1440,10 +1465,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Superset</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1471,10 +1492,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PhantomJs</a>
               </li>
              
@@ -1491,11 +1508,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">质量控制</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DNS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自动化测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
             
             <div class="clearfix"></div>

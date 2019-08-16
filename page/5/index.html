@@ -163,6 +163,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SSH-Secure-File-Transfer的编码问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/06/SSH-Secure-File-Transfer的编码问题/">SSH Secure File Transfer的编码问题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/06/SSH-Secure-File-Transfer的编码问题/" class="archive-article-date">
+  	<time datetime="2017-04-06T03:46:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在用SSH Secure File Transfer从linux服务器传输zip包到windows后，解压报文件已损坏。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>查Eidt-Settings-Global Settings-File Transfer-Mode</p>
+<p>之前在找其他问题时手贱把mode设置成了ASCII,一般建议设置成Auto selec（自动选择），问题解决！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SSH Secure File Transfer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/06/SSH-Secure-File-Transfer的编码问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-docker容器支持中文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -459,11 +535,11 @@ Acquire::https::proxy &quot;https://127.0.0.1:8000/&quot;;
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Shell</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pipeline</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pipeline</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Shell</a>
         		</li>
       		
 		</ul>
@@ -580,97 +656,6 @@ Acquire::https::proxy &quot;https://127.0.0.1:8000/&quot;;
 
 
   
-    <article id="post-基于Jenkins构建持续交付管道（五）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/09/基于Jenkins构建持续交付管道（五）/">基于Jenkins构建持续交付管道（五）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/09/基于Jenkins构建持续交付管道（五）/" class="archive-article-date">
-  	<time datetime="2017-03-09T09:06:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一章中介绍了目前基于Jenkins的Pipeline As Code，解决了之前基于Build Pipeline的一系列问题，本章中我们将介绍引入docker来优化我们的持续交付管道。</p>
-<h2 id="Docker是什么"><a href="#Docker是什么" class="headerlink" title="Docker是什么"></a>Docker是什么</h2><p>简单来说，Docker是区别于传统虚拟化的另外一种虚拟方式，更轻便。</p>
-<p>具体可以参考：<a href="https://yeasy.gitbooks.io/docker_practice/content/introduction/what.html" target="_blank" rel="external">https://yeasy.gitbooks.io/docker_practice/content/introduction/what.html</a></p>
-<h2 id="Docker可以解决什么问题"><a href="#Docker可以解决什么问题" class="headerlink" title="Docker可以解决什么问题"></a>Docker可以解决什么问题</h2><p>之前有提到过Jenkins完成构建任务主要是通过插件，插件则依赖持续集成服务器上的工具。比如如果我需要完成一个Maven工程的编译打包，首先得需要持续集成服务器上得有Maven工具，才能在管道中调用服务器里的Maven工具完成打包。这样带来的直接问题就是：不同构建任务如果需要不同构建工具，则需要在服务器上配置各种构建工具，这对于持续集成服务器的维护工作是个挑战。</p>
-        
-          <a class="article-more-a" href="/2017/03/09/基于Jenkins构建持续交付管道（五）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Jenkins</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">持续交付</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pipeline</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/09/基于Jenkins构建持续交付管道（五）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-基于Jenkins构建持续交付管道_五_" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -733,6 +718,97 @@ Acquire::https::proxy &quot;https://127.0.0.1:8000/&quot;;
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/03/09/基于Jenkins构建持续交付管道_五_/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-基于Jenkins构建持续交付管道（五）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/09/基于Jenkins构建持续交付管道（五）/">基于Jenkins构建持续交付管道（五）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/09/基于Jenkins构建持续交付管道（五）/" class="archive-article-date">
+  	<time datetime="2017-03-09T09:06:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一章中介绍了目前基于Jenkins的Pipeline As Code，解决了之前基于Build Pipeline的一系列问题，本章中我们将介绍引入docker来优化我们的持续交付管道。</p>
+<h2 id="Docker是什么"><a href="#Docker是什么" class="headerlink" title="Docker是什么"></a>Docker是什么</h2><p>简单来说，Docker是区别于传统虚拟化的另外一种虚拟方式，更轻便。</p>
+<p>具体可以参考：<a href="https://yeasy.gitbooks.io/docker_practice/content/introduction/what.html" target="_blank" rel="external">https://yeasy.gitbooks.io/docker_practice/content/introduction/what.html</a></p>
+<h2 id="Docker可以解决什么问题"><a href="#Docker可以解决什么问题" class="headerlink" title="Docker可以解决什么问题"></a>Docker可以解决什么问题</h2><p>之前有提到过Jenkins完成构建任务主要是通过插件，插件则依赖持续集成服务器上的工具。比如如果我需要完成一个Maven工程的编译打包，首先得需要持续集成服务器上得有Maven工具，才能在管道中调用服务器里的Maven工具完成打包。这样带来的直接问题就是：不同构建任务如果需要不同构建工具，则需要在服务器上配置各种构建工具，这对于持续集成服务器的维护工作是个挑战。</p>
+        
+          <a class="article-more-a" href="/2017/03/09/基于Jenkins构建持续交付管道（五）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Jenkins</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">持续交付</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pipeline</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/09/基于Jenkins构建持续交付管道（五）/">展开全文 >></a>
         </p>
       
 
@@ -935,85 +1011,6 @@ Acquire::https::proxy &quot;https://127.0.0.1:8000/&quot;;
 
 
   
-    <article id="post-Jenkins通过正则获取指定日志并邮件发送" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/28/Jenkins通过正则获取指定日志并邮件发送/">Jenkins通过正则获取指定日志并邮件发送</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/28/Jenkins通过正则获取指定日志并邮件发送/" class="archive-article-date">
-  	<time datetime="2017-02-28T02:31:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>Jenkins没有数据库，因此构建产出的内容都是放在文件中，如果要获取构建日志中的指定内容会非常麻烦。例如有一些用于造测试数据的自动化工具，需要从构建日志中获取到指定的测试数据，则需要借助正则解析构建日志。</p>
-<h2 id="Email-ext-plugin"><a href="#Email-ext-plugin" class="headerlink" title="Email-ext plugin"></a>Email-ext plugin</h2><p>Email-ext plugin插件提供了通过正则解析构建日志，提取指定构建日志内容的功能。$BUILD_LOG_MULTILINE_REGEX</p>
-<h2 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h2><p>在邮件content中配置如下内容：</p>
-<p>${BUILD_LOG_MULTILINE_REGEX,regex=”测试数据：.*”,maxMatches=0,showTruncatedLines=false,escapeHtml=false,matchedSegmentHtmlStyle=”color:blue”}</p>
-        
-          <a class="article-more-a" href="/2017/02/28/Jenkins通过正则获取指定日志并邮件发送/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Jenkins</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/28/Jenkins通过正则获取指定日志并邮件发送/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -1139,10 +1136,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
@@ -1179,6 +1172,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SSH Secure File Transfer</a>
               </li>
              
@@ -1192,10 +1189,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Superset</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1223,10 +1216,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PhantomJs</a>
               </li>
              
@@ -1243,11 +1232,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">质量控制</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">DNS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自动化测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
             
             <div class="clearfix"></div>

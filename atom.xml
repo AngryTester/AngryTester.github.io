@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-29T09:06:31.007Z</updated>
+  <updated>2019-08-16T03:54:57.176Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通过noVNC远程监控自动化测试执行过程</title>
+    <link href="http://yoursite.com/2019/08/16/%E9%80%9A%E8%BF%87noVNC%E8%BF%9C%E7%A8%8B%E7%9B%91%E6%8E%A7%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/"/>
+    <id>http://yoursite.com/2019/08/16/通过noVNC远程监控自动化测试执行过程/</id>
+    <published>2019-08-16T03:52:26.000Z</published>
+    <updated>2019-08-16T03:54:57.176Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="why"><a href="#why" class="headerlink" title="why"></a>why</h2><p>自动化测试追求的是无人值守，因此执行过程的监控就是鸡肋，但是在遇到以下场景时情况可能就有所不同：</p><ul><li><p>除了实时日志外希望输出更丰富的执行过程内容</p></li><li><p>需要给领导汇报自动化测试工作</p></li></ul><p>其中第二点尤为关键，对于不熟悉自动化测试的领导来说，可视化的执行视图对于领导来说会显得更友好且直观。</p><h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><p>对于Chrome和Firefox这类可运行在Linux环境下的前端自动化测试来说，已有前人种树，直接乘凉即可。可直接使用<a href="https://github.com/elgalu/docker-selenium" target="_blank" rel="external">docker-selenium</a>，因此难点主要在于只能运行于Windows环境下的IE浏览器。</p><h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p>整体方案包括<code>Selenium Grid+UltraVNC+noVNC+websockify</code>。操作步骤如下：</p><ul><li><p>Selenium Grid的环境配置无需赘述。</p></li><li><p>安装UltraVNC。</p></li><li><p>安装NodeJS。</p></li><li><p>安装相关依赖</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install ws</div><div class="line">npm install optimist</div><div class="line">npm install @novnc/novnc</div></pre></td></tr></table></figure></li><li><p>下载<a href="http://github.com/kanaka/noVNC/zipball/master" target="_blank" rel="external">noVNC</a>,解压至<code>node_modules</code>文件夹。</p></li><li><p>下载<a href="https://github.com/novnc/websockify-js/archive/master.zip" target="_blank" rel="external">Wesockify</a>,解压至<code>node_modules\noVNC</code>文件夹。</p></li><li><p>配置UltraVNC，去掉密码要求。进入UltraVNC安装目录找到配置文件，在配置文件中增加配置<code>AuthRequired=0</code>，然后将UltraVNC密码设置为空。</p></li><li><p>修改<code>vnc.html</code>，在body最后增加如下内容：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">      window.onload=function()&#123;</div><div class="line">          var timer = setTimeout(() =&gt; &#123;</div><div class="line">           clearTimeout(timer)</div><div class="line">           document.getElementById(&quot;noVNC_connect_button&quot;).click();</div><div class="line">          &#125;, 500);</div><div class="line">      &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></li><li><p>运行如下命令:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node C:\Users\Administrator\node_modules\noVNC\websockify-js-master\websockify\websockify.js --web C:\Users\Administrator\node_modules\noVNC 9000 localhost:5900</div></pre></td></tr></table></figure></li></ul><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>通过<a href="http://服务器IP:9000即可浏览器访问服务器实时页面效果。" target="_blank" rel="external">http://服务器IP:9000即可浏览器访问服务器实时页面效果。</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;why&quot;&gt;&lt;a href=&quot;#why&quot; class=&quot;headerlink&quot; title=&quot;why&quot;&gt;&lt;/a&gt;why&lt;/h2&gt;&lt;p&gt;自动化测试追求的是无人值守，因此执行过程的监控就是鸡肋，但是在遇到以下场景时情况可能就有所不同：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;除
+      
+    
+    </summary>
+    
+    
+      <category term="自动化测试" scheme="http://yoursite.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>TCPClient模式输出精准测试覆盖率</title>
@@ -490,33 +515,6 @@
     
     
       <category term="Jetty" scheme="http://yoursite.com/tags/Jetty/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>传统交付流程下的一些反模式</title>
-    <link href="http://yoursite.com/2018/05/31/%E4%BC%A0%E7%BB%9F%E4%BA%A4%E4%BB%98%E6%B5%81%E7%A8%8B%E4%B8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8F%8D%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://yoursite.com/2018/05/31/传统交付流程下的一些反模式/</id>
-    <published>2018-05-31T07:22:34.000Z</published>
-    <updated>2019-07-29T07:28:54.656Z</updated>
-    
-    <content type="html"><![CDATA[<p>从去年开始参与公司的敏捷中心，到今年参与到部门的敏捷教练团队，跟了好几个”敏捷团队“的交付过程，最大感受就是技术工作者非常不好忽悠。。。</p><p>作为技术工作者一员，也一直在思考如何给技术人员去讲解敏捷的价值观给交付过程实际带来的好处呢？ 别给我扯敏捷宣言，也别给我扯敏捷原则，来点实际的。</p><p>自认为对敏捷体会还不够深，估计得一直在学习的路上。毕业是不可能的了，这辈子都不可能毕业的，大道理又不会说，只能扯一些其他的来忽悠一下大家这样子。正面没的聊，咱们就只能从反面聊聊看。以下说说我认为的传统交付模式下的一些”反模式“。</p><h3 id="模式一：各司其则"><a href="#模式一：各司其则" class="headerlink" title="模式一：各司其则"></a>模式一：各司其则</h3><p>这本来是个褒义词，但是如果过度强调”各司其则“，往往就会演变成”各扫自家门前雪“了。交付团队区别于由各个交付成员自由组成的交付团体的主要原因就是团队会利用团队的优势，达成交付个体自由结合无法达成的效果。举个简单的例子，现在交付团队中一般都会有自动化测试的工作，因为涉及到”测试“，所以大多数交付团队会把这个工作完全交给测试人员来完成。但是自动化测试不同于普通的功能测试，需要依赖一些工具或者框架的支撑，而测试人员的优势往往是在业务而非代码，这个时候如果开发人员能够共同参与，结合测试人员的业务能力和开发人员的代码能力，相信这个工作一定能够达到事半功倍的效果。类似的还包括开发人员和运维人员之间存在的隔阂。</p><blockquote><p>最直接影响：交付能力平庸</p></blockquote><h3 id="模式二：我们以前一直是这么做的，没感觉有什么不好的"><a href="#模式二：我们以前一直是这么做的，没感觉有什么不好的" class="headerlink" title="模式二：我们以前一直是这么做的，没感觉有什么不好的"></a>模式二：我们以前一直是这么做的，没感觉有什么不好的</h3><a id="more"></a><p>对不起，你的感觉错了。遇到比较多的就是开发工作和测试工作的衔接问题，都没完全开发完，我怎么能测试呢？这里有必要和大家探讨一下”测试“的概念，私以为所有对最终交付物质量有提升的工作都可以归类为”测试“，对设计的评审，对文档的堪误，对代码的走查，都是”测试“的范围，所以为什么一定要等到把交付物完全封装好才能测试呢？是否可以先”测试“交付物的其中一部分呢？我们都知道，缺陷发现越晚，修复成本是越高的。为什么要限制在以前的做法里无法自拔呢？</p><blockquote><p>最直接影响：交付能力停滞不前</p></blockquote><h3 id="模式三：我也不知道这个文档有什么用，但是感觉有必要写"><a href="#模式三：我也不知道这个文档有什么用，但是感觉有必要写" class="headerlink" title="模式三：我也不知道这个文档有什么用，但是感觉有必要写"></a>模式三：我也不知道这个文档有什么用，但是感觉有必要写</h3><p>对不起，你的感觉又错了。如果一个过程产物连交付团队都不理解有什么作用的话，还能指望客户买单吗？交付团队可能会说我们并不会要求客户为文档买单啊。但是你得明白，交付团队的主要职责并不是为了满足过程的一些标准，规范，最终目标都是为了让客户心甘情愿的买单，所以在交付过程中的任何工作，都可以理解为是需要客户买单的。所以，请你仔细回忆一下，你现在每个版本交付过程中写的那些文档，到底是起到什么作用？这里给出一些选项，有一类文档是为了指导当前工作的，比如我需要完全照着这个文档来进行后续的工作，还有一类文档是为了以后的工作做得更好的，比如我希望能够根据这个文档找出我之前做得不好的地方，从而在之后的工作中改进，你的文档属于这两类之一吗？</p><blockquote><p>最直接影响：交付成本浪费</p></blockquote><h3 id="模式四：需求文档上没写的东西完全不知道怎么开发测试"><a href="#模式四：需求文档上没写的东西完全不知道怎么开发测试" class="headerlink" title="模式四：需求文档上没写的东西完全不知道怎么开发测试"></a>模式四：需求文档上没写的东西完全不知道怎么开发测试</h3><p>随着时间的推移，目前这种现象已经越来越少了，但是仍然存在。软件交付与其他行业的交付不太一样，不确定性是必然存在的，而且文档存在一个最大的问题，承载的内容始终有限，永远无法把需求的方方面面都写进文档。所以测试工作的难点其实也体现在这里，如果给你一份非常完善的文档，细致到用户使用的各种场景，各种输入都考虑完全，测试设计工作完全没难度，那个时候测试的能力要求可能只是需要阅读能力过关即可了。这点对开发人员也适用。我们没办法奢望一份完善的需求文档，有一个愿意和你随时沟通的产品人员就已经非常不错了。</p><blockquote><p>最直接影响：交付结果无法满足预期</p></blockquote><h3 id="模式五：邮件才是工作沟通的正规方式"><a href="#模式五：邮件才是工作沟通的正规方式" class="headerlink" title="模式五：邮件才是工作沟通的正规方式"></a>模式五：邮件才是工作沟通的正规方式</h3><p>提测邮件，第一轮测试完成邮件，缺陷修复完成邮件，测试通过邮件，甚至过程中的缺陷评定，例如某一个缺陷需要否决，也需要经过缺陷管理系统的一通操作才能完成。和之前模式三的文档一样，这些邮件通常只发一遍，后续完全不会回过头查看。所以，邮件这种方式真的好吗？如果测试过程中，测试人员直接坐开发人员旁边，是不是这些信息也能正常传递，并且在降低了沟通成本的同时，信息失真的可能性更低？</p><blockquote><p>最直接影响：交付成本浪费</p></blockquote><h3 id="模式六：总结的改进措施永远无法验收"><a href="#模式六：总结的改进措施永远无法验收" class="headerlink" title="模式六：总结的改进措施永远无法验收"></a>模式六：总结的改进措施永远无法验收</h3><p>希望需求文档更明确一些，希望开发人员更仔细一些，希望测试人员测试更全面一些，类似这样一些期望在传统交付模式下的总结会上经常会听到。但是回头想想，你觉得这些改进措施做到了吗？估计很难评判。这都是因为这些期望都是定性的，缺乏定量指标，所以似乎随时回过头来看，这些措施貌似完成了，貌似又没完成，逐渐就都不care了。</p><blockquote><p>最直接影响：改进无法落地</p></blockquote><p>暂时吐槽这些，因为接触的项目不多，有失偏颇的地方请大家留言批评，否则看不到听不到我是不会改的。至于这些”反模式“在敏捷实践里有没有，就仁者见仁智者见智了。欢迎留言补充。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;从去年开始参与公司的敏捷中心，到今年参与到部门的敏捷教练团队，跟了好几个”敏捷团队“的交付过程，最大感受就是技术工作者非常不好忽悠。。。&lt;/p&gt;
-&lt;p&gt;作为技术工作者一员，也一直在思考如何给技术人员去讲解敏捷的价值观给交付过程实际带来的好处呢？ 别给我扯敏捷宣言，也别给我扯敏捷原则，来点实际的。&lt;/p&gt;
-&lt;p&gt;自认为对敏捷体会还不够深，估计得一直在学习的路上。毕业是不可能的了，这辈子都不可能毕业的，大道理又不会说，只能扯一些其他的来忽悠一下大家这样子。正面没的聊，咱们就只能从反面聊聊看。以下说说我认为的传统交付模式下的一些”反模式“。&lt;/p&gt;
-&lt;h3 id=&quot;模式一：各司其则&quot;&gt;&lt;a href=&quot;#模式一：各司其则&quot; class=&quot;headerlink&quot; title=&quot;模式一：各司其则&quot;&gt;&lt;/a&gt;模式一：各司其则&lt;/h3&gt;&lt;p&gt;这本来是个褒义词，但是如果过度强调”各司其则“，往往就会演变成”各扫自家门前雪“了。交付团队区别于由各个交付成员自由组成的交付团体的主要原因就是团队会利用团队的优势，达成交付个体自由结合无法达成的效果。举个简单的例子，现在交付团队中一般都会有自动化测试的工作，因为涉及到”测试“，所以大多数交付团队会把这个工作完全交给测试人员来完成。但是自动化测试不同于普通的功能测试，需要依赖一些工具或者框架的支撑，而测试人员的优势往往是在业务而非代码，这个时候如果开发人员能够共同参与，结合测试人员的业务能力和开发人员的代码能力，相信这个工作一定能够达到事半功倍的效果。类似的还包括开发人员和运维人员之间存在的隔阂。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;最直接影响：交付能力平庸&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;模式二：我们以前一直是这么做的，没感觉有什么不好的&quot;&gt;&lt;a href=&quot;#模式二：我们以前一直是这么做的，没感觉有什么不好的&quot; class=&quot;headerlink&quot; title=&quot;模式二：我们以前一直是这么做的，没感觉有什么不好的&quot;&gt;&lt;/a&gt;模式二：我们以前一直是这么做的，没感觉有什么不好的&lt;/h3&gt;
-    
-    </summary>
-    
-    
-      <category term="敏捷" scheme="http://yoursite.com/tags/%E6%95%8F%E6%8D%B7/"/>
     
   </entry>
   

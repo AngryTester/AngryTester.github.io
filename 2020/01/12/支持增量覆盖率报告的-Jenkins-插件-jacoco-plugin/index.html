@@ -19,8 +19,9 @@
 <meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121114501.png">
 <meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121144514.png">
 <meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121144526.png">
+<meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121152801.png">
 <meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E5%9B%BE%E7%89%8720200121114239.png">
-<meta property="og:updated_time" content="2020-02-12T04:52:04.375Z">
+<meta property="og:updated_time" content="2020-02-12T04:53:46.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支持增量覆盖率报告的 Jenkins 插件-jacoco-plugin">
 <meta name="twitter:description" content="前言基于Jacoco获取增量代码覆盖率的方案社区上已经有很多帖子了，这个帖子就不赘述了，有兴趣的可以在社区搜索或参考我的这个工程-jacoco 方案的实现大体分成两类，一类是基于jacoco的插件通过命令行生成，这种方式对于了解个中原理的童鞋来说比较轻便且排错简单，但是对于不熟悉maven或gradle的童鞋来说还是有一定门槛的，所以就出现另一种方式即将整个方案平台化，通过一些平台的封装提升方案的">
@@ -208,7 +209,7 @@
 <p>查看覆盖率报告只显示变更代码部分：</p>
 <p><img src="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121144526.png" alt=""></p>
 <p>若两个输入框都为空，则显示所有代码报告：</p>
-<p>![](<a href="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121152801.png" target="_blank" rel="external">https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121152801.png</a></p>
+<p><img src="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121152801.png" alt=""></p>
 <h1 id="插件安装方式"><a href="#插件安装方式" class="headerlink" title="插件安装方式"></a>插件安装方式</h1><p>插件工程地址：<a href="https://github.com/AngryTester/jacoco-plugin" target="_blank" rel="external">https://github.com/AngryTester/jacoco-plugin</a></p>
 <p>打包命令：<code>mvn clean package -Dmaven.test.skip=true</code></p>
 <p>通过Jenkins安装官方Jacoco插件（这一步的主要目的是安装Jacoco插件依赖的其他插件），然后删除Jenkins主目录plugins下的jacoco：</p>

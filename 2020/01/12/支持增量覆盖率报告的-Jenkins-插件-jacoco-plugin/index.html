@@ -9,7 +9,7 @@
   <title>支持增量覆盖率报告的 Jenkins 插件-jacoco-plugin | AngryTester</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言基于Jacoco获取增量代码覆盖率的方案社区上已经有很多帖子了，这个帖子就不赘述了，有兴趣的可以在社区搜索或参考我的这个工程-jacoco 方案的实现大体分成两类，一类是基于jacoco的插件通过命令行生成，这种方式对于了解个中原理的童鞋来说比较轻便且排错简单，但是对于不熟悉maven或gradle的童鞋来说还是有一定门槛的，所以就出现另一种方式即将整个方案平台化，通过一些平台的封装提升方案的">
-<meta name="keywords" content="Jacoco，Jenkins">
+<meta name="keywords" content="Jacoco,Jenkins">
 <meta property="og:type" content="article">
 <meta property="og:title" content="支持增量覆盖率报告的 Jenkins 插件-jacoco-plugin">
 <meta property="og:url" content="http://yoursite.com/2020/01/12/支持增量覆盖率报告的-Jenkins-插件-jacoco-plugin/index.html">
@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121144514.png">
 <meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121144526.png">
 <meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E5%9B%BE%E7%89%8720200121114239.png">
-<meta property="og:updated_time" content="2020-02-12T04:45:35.349Z">
+<meta property="og:updated_time" content="2020-02-12T04:52:04.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支持增量覆盖率报告的 Jenkins 插件-jacoco-plugin">
 <meta name="twitter:description" content="前言基于Jacoco获取增量代码覆盖率的方案社区上已经有很多帖子了，这个帖子就不赘述了，有兴趣的可以在社区搜索或参考我的这个工程-jacoco 方案的实现大体分成两类，一类是基于jacoco的插件通过命令行生成，这种方式对于了解个中原理的童鞋来说比较轻便且排错简单，但是对于不熟悉maven或gradle的童鞋来说还是有一定门槛的，所以就出现另一种方式即将整个方案平台化，通过一些平台的封装提升方案的">
@@ -248,7 +248,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Jacoco，Jenkins</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Jacoco</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Jenkins</a>
         		</li>
       		
 		</ul>
@@ -518,10 +522,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Superset</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
               </li>
              
@@ -530,11 +530,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
+                <a href="javascript:void(0)" class="js-tag color4">Superset</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,6 +562,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">PhantomJs</a>
               </li>
              
@@ -570,15 +578,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">测试策略</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Jacoco，Jenkins</a>
               </li>
              
               <li class="article-tag-list-item">

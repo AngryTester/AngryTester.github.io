@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121144526.png">
 <meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E6%88%AA%E5%9B%BE20200121152801.png">
 <meta property="og:image" content="https://github.com/AngryTester/blog/raw/master/%E6%94%AF%E6%8C%81%E5%A2%9E%E9%87%8F%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A%E7%9A%84%20Jenkins%20%E6%8F%92%E4%BB%B6-jacoco-plugin/QQ%E5%9B%BE%E7%89%8720200121114239.png">
-<meta property="og:updated_time" content="2020-02-12T04:53:46.023Z">
+<meta property="og:updated_time" content="2020-02-12T05:18:56.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支持增量覆盖率报告的 Jenkins 插件-jacoco-plugin">
 <meta name="twitter:description" content="前言基于Jacoco获取增量代码覆盖率的方案社区上已经有很多帖子了，这个帖子就不赘述了，有兴趣的可以在社区搜索或参考我的这个工程-jacoco 方案的实现大体分成两类，一类是基于jacoco的插件通过命令行生成，这种方式对于了解个中原理的童鞋来说比较轻便且排错简单，但是对于不熟悉maven或gradle的童鞋来说还是有一定门槛的，所以就出现另一种方式即将整个方案平台化，通过一些平台的封装提升方案的">
@@ -189,7 +189,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>基于Jacoco获取增量代码覆盖率的方案社区上已经有很多帖子了，这个帖子就不赘述了，有兴趣的可以在社区搜索或参考我的这个工程-<a href="https://github.com/AngryTester/.jacoco" target="_blank" rel="external">jacoco</a></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>基于Jacoco获取增量代码覆盖率的方案社区上已经有很多帖子了，这个帖子就不赘述了，有兴趣的可以在社区搜索或参考我的这个工程-<a href="https://github.com/AngryTester/jacoco" target="_blank" rel="external">jacoco</a></p>
 <p>方案的实现大体分成两类，一类是基于jacoco的插件通过命令行生成，这种方式对于了解个中原理的童鞋来说比较轻便且排错简单，但是对于不熟悉maven或gradle的童鞋来说还是有一定门槛的，所以就出现另一种方式即将整个方案平台化，通过一些平台的封装提升方案的易用性，但是对于大多数公司来说，可能不允许做过多投入来做平台（特别在社区也有童鞋提出过领导不认可覆盖率报告的情况），因此需要一种相对折中的方案，即无需做过多改造但又可轻便实现整套方案。</p>
 <p>Jenkins作为CICD使用最广泛的开源工具/平台，可轻易实现任务的编排，且丰富的插件体系使得它可以方便地集成各种功能，其中集成Jacoco生成覆盖率报告也是功能之一。因此我们考虑改造Jacoco插件以使得它可以支撑获取增量代码覆盖率，结合Jenkins自带的自动任务调度，就可以非常方便地实现增量代码覆盖率方案了。</p>
 <h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><p>其实增量代码覆盖率的实现是比较简单的，主要就是两个点，一个是获取增量代码，另一个是过滤报告。其中获取增量代码可结合AST语法树实现，过滤报告则只需要对Jacoco的报告生成部分做少量改造即可，细节请参考这个工程-<a href="https://github.com/AngryTester/.jacoco" target="_blank" rel="external">jacoco</a>。因此我们要做的就是把这两个点直接照搬至Jacoco插件的实现即可。</p>

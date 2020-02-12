@@ -9,7 +9,7 @@
   <title>管道中通过shell验证测试环境是否可用 | AngryTester</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="坑因为要将传统的持续交付管道改造成基于Docker的，所以需要切换原有的环境部署方式，相应的环境验证方式也需要更改。之前的方式Jenkins会把部署脚本和环境验证脚本当成一个shell脚本执行，做了切换之后，需要将之前的环境验证脚本改成执行通过shell执行，即只需要用linux环境就可以运行。由于对linux的shell不熟，才遇到这样一个大坑，特此记录。 参考脚本如下: 1sh &amp;quot;">
-<meta name="keywords" content="Pipeline,Shell">
+<meta name="keywords" content="Shell,Pipeline">
 <meta property="og:type" content="article">
 <meta property="og:title" content="管道中通过shell验证测试环境是否可用">
 <meta property="og:url" content="http://yoursite.com/2017/03/14/管道中通过shell验证测试环境是否可用/index.html">
@@ -221,11 +221,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pipeline</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Shell</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Shell</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pipeline</a>
         		</li>
       		
 		</ul>
@@ -349,7 +349,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 AngryTester
+    		&copy; 2020 AngryTester
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -460,6 +460,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
@@ -496,11 +500,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color5">SSH Secure File Transfer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SSH Secure File Transfer</a>
+                <a href="javascript:void(0)" class="js-tag color4">Superset</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,11 +516,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Superset</a>
+                <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
+                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,11 +556,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">测试策略</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">Jacoco，Jenkins</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,10 +577,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">自动化测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
             
             <div class="clearfix"></div>

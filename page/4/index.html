@@ -163,6 +163,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-TestNG实现失败重试功能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/07/TestNG实现失败重试功能/">TestNG实现失败重试功能</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/07/TestNG实现失败重试功能/" class="archive-article-date">
+  	<time datetime="2017-11-07T07:21:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>前端自动化测试的稳定性是个很大的问题，在一些不追求速度追求稳定性的场景下，我们可以通过失败重试的功能来达到测试结果的稳定性．</p>
+<h2 id="为什么需要记录下来"><a href="#为什么需要记录下来" class="headerlink" title="为什么需要记录下来"></a>为什么需要记录下来</h2><p>之前为了兼容JDK7的环境，TestNG的版本一直用的是6.9.6的版本，但是注意了，这个版本是有bug的，对于不带DataProvider的情况，重试功能可以正常使用，但是一旦加上数据驱动，运行结果就各种混乱了．因为这个版本问题，困住近一周．</p>
+<p>自己也是一根筋，没有想到去TestNG的官方issue里找答案，结果在开发者的解答中说6.9.7版本已经解决这个bug，抱着试一试的心态更新了一下TestNG的版本，果然，结果正常了，瞬间想骂脏字．</p>
+<h2 id="需要记录的几个点"><a href="#需要记录的几个点" class="headerlink" title="需要记录的几个点"></a>需要记录的几个点</h2><ul>
+<li>1.TestNG的版本问题</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/11/07/TestNG实现失败重试功能/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">TestNg</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/07/TestNG实现失败重试功能/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-maven执行sonar扫描命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -935,89 +1016,6 @@ dCaps.setCapability(&quot;takesScreenshot&quot;, true);
 
 
   
-    <article id="post-Windows上安装Docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/05/Windows上安装Docker/">Windows上安装Docker</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/05/Windows上安装Docker/" class="archive-article-date">
-  	<time datetime="2017-05-04T18:43:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="官方已有文档，why折腾"><a href="#官方已有文档，why折腾" class="headerlink" title="官方已有文档，why折腾"></a>官方已有文档，why折腾</h2><p>公司内网，与default配置有区别。</p>
-<h2 id="Windows机器配置"><a href="#Windows机器配置" class="headerlink" title="Windows机器配置"></a>Windows机器配置</h2><blockquote>
-<p>操作系统:64位Windows 7专业版</p>
-<p>内存：4GB</p>
-</blockquote>
-<h2 id="安装Docker-Toolbox"><a href="#安装Docker-Toolbox" class="headerlink" title="安装Docker Toolbox"></a>安装Docker Toolbox</h2><blockquote>
-<p>下载：<a href="https://download.docker.com/win/stable/DockerToolbox.exe" target="_blank" rel="external">https://download.docker.com/win/stable/DockerToolbox.exe</a></p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/05/05/Windows上安装Docker/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/05/Windows上安装Docker/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -1032,7 +1030,7 @@ dCaps.setCapability(&quot;takesScreenshot&quot;, true);
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 AngryTester
+    		&copy; 2020 AngryTester
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1143,6 +1141,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
@@ -1179,11 +1181,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color5">SSH Secure File Transfer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SSH Secure File Transfer</a>
+                <a href="javascript:void(0)" class="js-tag color4">Superset</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1195,11 +1197,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Superset</a>
+                <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
+                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1235,11 +1237,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">测试策略</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">Jacoco，Jenkins</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1252,10 +1258,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">自动化测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
             
             <div class="clearfix"></div>

@@ -163,6 +163,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-基于Jenkins搭建持续交付管道" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/09/基于Jenkins搭建持续交付管道/">基于Jenkins搭建持续交付管道</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/09/基于Jenkins搭建持续交付管道/" class="archive-article-date">
+  	<time datetime="2017-02-09T00:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Jenkins2-0"><a href="#Jenkins2-0" class="headerlink" title="Jenkins2.0"></a>Jenkins2.0</h2><p>持续交付管道是支撑持续交付流程的基础设施，除了Jenkins，业界还有其他的一些持续集成工具/平台如ThoughtWorks的Go平台以及Travis CI，主要用途就是为了打造交付流水线，所以本身就是支持管道化构建的。在这一点上，Jenkins相对会落后一些，但是在Jenkins2.0版本，及时推出了对管道化构建的支持，即Build Pipeline。通过Jenkins的管道化支持，你可以将你的交付过程中的各个环节串联起来，组成属于你们项目组的交付流程。如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/AngryTester/blog/master/pipeline.png" alt=""></p>
+<h2 id="建设过程"><a href="#建设过程" class="headerlink" title="建设过程"></a>建设过程</h2><p>Jenkins的安装和启动就不赘述了，需要使用到的插件是Build Pipeline View，可能存在依赖插件，建议将Jenkins做成一个镜像，便于其他团队复用，避免大量重复配置。</p>
+<h3 id="逐个建立构建任务"><a href="#逐个建立构建任务" class="headerlink" title="逐个建立构建任务"></a>逐个建立构建任务</h3>
+        
+          <a class="article-more-a" href="/2017/02/09/基于Jenkins搭建持续交付管道/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Jenkins</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">持续交付</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/09/基于Jenkins搭建持续交付管道/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Maven构建反应堆及在Jenkins中的用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -511,7 +594,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 AngryTester
+    		&copy; 2020 AngryTester
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -622,6 +705,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
@@ -658,11 +745,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color5">SSH Secure File Transfer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SSH Secure File Transfer</a>
+                <a href="javascript:void(0)" class="js-tag color4">Superset</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -674,11 +761,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Superset</a>
+                <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
+                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -714,11 +801,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">测试策略</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">Jacoco，Jenkins</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -731,10 +822,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">自动化测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
             
             <div class="clearfix"></div>

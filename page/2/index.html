@@ -163,6 +163,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-我所经历的以及我所理解的敏捷-六-Scrum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/22/我所经历的以及我所理解的敏捷-六-Scrum/">我所经历的以及我所理解的敏捷-六-Scrum</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/22/我所经历的以及我所理解的敏捷-六-Scrum/" class="archive-article-date">
+  	<time datetime="2019-03-22T00:54:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Scrum全景图"><a href="#Scrum全景图" class="headerlink" title="Scrum全景图"></a>Scrum全景图</h2><p>Scrum本质上是一种在敏捷价值观指导下总结的实践方法。整个实践流程可用下图总结：</p>
+<h2 id="Scrum的一个核心-Sprint"><a href="#Scrum的一个核心-Sprint" class="headerlink" title="Scrum的一个核心-Sprint"></a>Scrum的一个核心-Sprint</h2><p><code>Sprint</code>中文译名为冲刺，即为Scrum中的迭代，意指团队在这个期间全身心关注目标前进。</p>
+<p>一个迭代中包含以下几项关键活动：<br>
+        
+          <a class="article-more-a" href="/2019/03/22/我所经历的以及我所理解的敏捷-六-Scrum/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">敏捷</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/22/我所经历的以及我所理解的敏捷-六-Scrum/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我所经历的以及我所理解的敏捷-四-敏捷计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -938,89 +1016,6 @@
 
 
   
-    <article id="post-Java-Web项目集成Jetty" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/03/Java-Web项目集成Jetty/">Java Web项目集成Jetty</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/03/Java-Web项目集成Jetty/" class="archive-article-date">
-  	<time datetime="2018-07-03T06:02:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><p>最近花好多时间在<a href="https://github.com/aharin/inproctester" target="_blank" rel="external">inproctester</a>这个项目上,暂时还是没有很大的进展，挫败感强烈。虽然进展不多，但过程中还是接触了一些网上貌似不太好查到的新东西，记录一下不枉费这段时间的心血。</p>
-<h2 id="Jetty是什么"><a href="#Jetty是什么" class="headerlink" title="Jetty是什么"></a>Jetty是什么</h2><p>可以内嵌到应用里的中间件，作用与<code>tomcat</code>或<code>jboss</code>类似，优点是不需要安装，可直接通过代码内嵌进应用，然后直接和直接应用程序一样执行。</p>
-<h2 id="配置过程中可能存在的问题"><a href="#配置过程中可能存在的问题" class="headerlink" title="配置过程中可能存在的问题"></a>配置过程中可能存在的问题</h2><ul>
-<li><p>Jetty对EL表达式的支持不好，导致页面报500无法访问，主要是针对EL表达式中的三目运算符，冒号前后的选项必须空格。</p>
-</li>
-<li><p>Jetty运行应用时，通过<code>servletContext.getRealPath(&quot;/&quot;)</code>相比其他中间件获取到的路径会少一个<code>/</code>，导致某些资源访问可能存在问题。</p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2018/07/03/Java-Web项目集成Jetty/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Jetty</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/03/Java-Web项目集成Jetty/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1035,7 +1030,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 AngryTester
+    		&copy; 2020 AngryTester
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1146,6 +1141,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
@@ -1182,11 +1181,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+                <a href="javascript:void(0)" class="js-tag color5">SSH Secure File Transfer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SSH Secure File Transfer</a>
+                <a href="javascript:void(0)" class="js-tag color4">Superset</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1198,11 +1197,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Superset</a>
+                <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">TestNg</a>
+                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1238,11 +1237,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">测试策略</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">Jacoco，Jenkins</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1255,10 +1258,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">自动化测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jacoco</a>
               </li>
             
             <div class="clearfix"></div>
